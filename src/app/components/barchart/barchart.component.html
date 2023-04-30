@@ -1,0 +1,11 @@
+<div class="chart-container">
+  <canvas baseChart
+          [type]="'bar'"
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [legend]="barChartLegend"
+          [plugins]="barChartPlugins"
+          *ngIf="chartReady">
+  </canvas>
+</div>

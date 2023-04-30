@@ -1,0 +1,188 @@
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+
+#header {
+  background-color: #212121;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+}
+
+#logo img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+#nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+#nav li {
+  margin: 0 10px;
+}
+
+#nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#nav a:hover {
+  color: #f2f2f2;
+}
+
+
+#sidebar {
+  background-color: #424242;
+  padding: 20px;
+  width: 200px;
+  color: #fff;
+}
+
+#user-profile img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+#menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#menu li {
+  margin: 10px 0;
+}
+
+#menu a {
+  display: block;
+  padding: 10px;
+  background-color: #616161;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+#menu a:hover {
+  background-color: #f2f2f2;
+  color: #212121;
+}
+
+#menu a i {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+
+#main-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#content {
+  flex: 3;
+  padding: 20px;
+}
+
+#map {
+  margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  height: 500px;
+}
+
+#map h2 {
+  margin-top: 0;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#charts {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#chart-1,
+#chart-2 {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin-right: 20px;
+}
+
+#chart-1 h2,
+#chart-2 h2 {
+  margin-top: 0;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+}
+
+
+.fa-home {
+  color: #009688;
+}
+
+.fa-virus {
+  color: #f44336;
+}
+
+.fa-pencil-alt {
+  color: #ff9800;
+}
+
+.fa-chart-pie {
+  color: #4caf50
+}
+.fa-cog {
+  color: #ffc107;
+}
+
+.fa-sign-out-alt {
+  color: #e91e63;
+}
+
+
+footer {
+  padding: 2rem 0;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+
+}
+
+p {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}

@@ -1,0 +1,112 @@
+
+<nav class="navbar">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="principal">
+      COVID-19 Dashboard
+    </a>
+    <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div id="navbarExampleTransparentExample" class="navbar-menu">
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-light" href="/logout">
+            Logout
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <h1 class="title">COVID-19 Tracker</h1>
+  <form class="search-form" [formGroup]="searchForm" (ngSubmit)="datasearch()" novalidate>
+    <div class="field is-horizontal">
+      <div class="field-body">
+        <div class="field">
+          <p class="control has-icons-left">
+            <input class="input is-medium" type="text" placeholder="Search" name="field" formControlName="field">
+            <span class="icon is-small is-left">
+              <i class="fas fa-search"></i>
+            </span>
+          </p>
+          <p class="help is-danger" *ngIf="getControl['field'].touched && getControl['field'].invalid">
+            <span *ngIf="getControl['field'].errors && !getControl['field'].errors">
+              Minimum length is 6 characters.
+            </span>
+            <span *ngIf="getControl['field'].errors">
+              This field is required.
+            </span>
+          </p>
+        </div>
+        <div class="field">
+          <p class="control is-expanded">
+            <span class="select is-medium">
+              <select name="option" formControlName="option">
+                <option value="country">Country</option>
+                <option value="continent">Continent</option>
+              </select>
+            </span>
+            <p class="help is-danger" *ngIf="getControl['option'].touched && getControl['option'].invalid">
+              This field is required.
+            </p>
+
+        </div>
+        <div class="field">
+          <p class="control">
+            <button class="button is-primary is-medium" type="submit" [disabled]="searchForm.invalid">Search</button>
+          </p>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <div class="search-image">
+    <img src="../../../assets/map.jpeg" alt="search icon">
+  </div>
+
+  <div class="container my-5" *ngIf="showTable"  >
+    <div class="row">
+      <div class="col">
+        <table class="table table-striped" >
+          <thead>
+            <tr>
+              <th>Continent</th>
+              <th>Country</th>
+              <th>Population</th>
+              <th>Cases</th>
+              <th>Deaths</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of data" >
+              <td>{{ item.continent }}</td>
+              <td>{{ item.country }}</td>
+              <td>{{ item.population }}</td>
+              <td>{{ item.cases }}</td>
+              <td>{{ item.deaths }}</td>
+              <td>{{ TimeNow(item.date) }}</td>
+              <td>
+                <button class="btn btn-danger" (click)="delete(item)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>&copy; 2023 COVID-19 Tracker. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+

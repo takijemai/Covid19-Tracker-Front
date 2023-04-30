@@ -1,0 +1,50 @@
+<div class="login-container">
+  <form action="" class="form" [formGroup]="signupForm" (ngSubmit)="register()" novalidate>
+    <h2 class="form-heading">COVID SIGN UP</h2>
+
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label class="form-label">Name</mat-label>
+      <input matInput type="text" name="name" formControlName="name" required class="form-input">
+      <mat-error *ngIf="signupForm.controls['name'].touched && signupForm.controls['name'].invalid">
+        <mat-error *ngIf="signupForm.controls['name'].errors && !signupForm.controls['name'].errors">
+          Please enter a valid name
+        </mat-error>
+        <mat-error *ngIf="signupForm.controls['name'].errors">
+          Name is <strong>required</strong>
+        </mat-error>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label class="form-label">Email</mat-label>
+      <input matInput type="email" name="email" formControlName="email" required class="form-input">
+      <mat-error *ngIf="signupForm.controls['email'].touched && signupForm.controls['email'].invalid">
+        <mat-error *ngIf="signupForm.controls['email'].errors && !signupForm.controls['email'].errors">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="signupForm.controls['email'].errors">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label class="form-label">Password</mat-label>
+      <input matInput type="password" name="password" formControlName="password" required class="form-input">
+      <mat-error *ngIf="signupForm.controls['password'].touched && signupForm.controls['password'].invalid">
+        <mat-error *ngIf="signupForm.controls['password'].errors && !signupForm.controls['password'].errors">
+          Please enter a valid password > 6
+        </mat-error>
+        <mat-error *ngIf="signupForm.controls['password'].errors">
+          Password is <strong>required</strong>
+        </mat-error>
+      </mat-error>
+    </mat-form-field>
+
+    <button type="submit" id="submit" [disabled]="signupForm.invalid" class="form-button">SIGN UP</button>
+    <p class="form-bottom-text">Already have an account? <a routerLink="/login" class="form-link">Sign In</a></p>
+  </form>
+  <nav>
+    <a routerLink="/">Home</a>
+  </nav>
+</div>

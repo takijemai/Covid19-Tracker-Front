@@ -1,0 +1,17 @@
+<div class="chart-container" *ngIf="chartReady">
+  <div class="chart-wrapper">
+    <canvas
+    #pieChart
+    baseChart
+    [type]="'pie'"
+    [datasets]="pieChartDatasets"
+    [labels]="pieChartLabels"
+    [options]="pieChartOptions"
+    [legend]="pieChartLegend"
+    [plugins]="pieChartPlugins"
+  >
+  </canvas>
+  </div>
+</div>
+
+

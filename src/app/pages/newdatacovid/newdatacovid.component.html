@@ -1,0 +1,93 @@
+<nav class="navbar">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="principal">
+      COVID-19 Dashboard
+    </a>
+    <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div id="navbarExampleTransparentExample" class="navbar-menu">
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-light" href="/logout">
+            Logout
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="section">
+  <div class="container">
+    <h1 class="title">Add COVID-19 Data</h1>
+    <form class="form" [formGroup]="covidForm" (ngSubmit)="submit()" novalidate>
+      <div class="field">
+        <label class="label">Country</label>
+        <div class="control">
+          <input class="input" type="text" name="country" formControlName="country">
+        </div>
+        <div *ngIf="getControl['country'].touched && getControl['country'].invalid" class="help is-danger">
+          <div *ngIf="getControl['country'].errors">Country is required</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Continent</label>
+        <div class="control">
+          <div class="select">
+            <select name="continent" formControlName="continent">
+              <option value="" disabled selected>Select continent</option>
+              <option value="Africa">Africa</option>
+              <option value="America">America</option>
+              <option value="Asia">Asia</option>
+              <option value="Europe">Europe</option>
+              <option value="Oceania">Oceania</option>
+            </select>
+          </div>
+        </div>
+        <div *ngIf="getControl['continent'].touched && getControl['continent'].invalid" class="help is-danger">
+          <div *ngIf="getControl['continent'].errors">Continent is required</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Population</label>
+        <div class="control">
+          <input class="input" type="number" name="population" formControlName="population">
+        </div>
+        <div *ngIf="getControl['population'].touched && getControl['population'].invalid" class="help is-danger">
+          <div *ngIf="getControl['population'].errors">Population is required</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Cases</label>
+        <div class="control">
+          <input class="input" type="number" name="cases" formControlName="cases">
+        </div>
+        <div *ngIf="getControl['cases'].touched && getControl['cases'].invalid" class="help is-danger">
+          <div *ngIf="getControl['cases'].errors">Cases is required</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Deaths</label>
+        <div class="control">
+          <input class="input" type="number" name="deaths" formControlName="deaths">
+        </div>
+        <div *ngIf="getControl['deaths'].touched && getControl['deaths'].invalid" class="help is-danger">
+          <div *ngIf="getControl['deaths'].errors">Deaths is required</div>
+        </div>
+        <button  type="submit" id="submit" *ngIf="!covidForm.invalid">Add</button>
+      </div>
+    </form>
+  </div>
+</section>
+<footer>
+  <p>&copy; 2023 COVID-19 Tracker. All rights reserved.</p>
+</footer>

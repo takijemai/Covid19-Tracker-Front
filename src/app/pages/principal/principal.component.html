@@ -1,0 +1,56 @@
+
+<div id="header">
+  <div id="logo">
+    <img src="../../../assets/track.png" alt="Company logo">
+    <span>COVID-19 Tracker</span>
+  </div>
+  <div id="nav">
+    <ul>
+      <li><a routerLink="/home">Dashboard</a></li>
+      <li><a >Contact</a></li>
+      <li><a >Settings</a></li>
+      <li><a >Help</a></li>
+    </ul>
+  </div>
+</div>
+
+
+<div id="main-content">
+  <div id="sidebar">
+    <div id="user-profile">
+      <img src="../../../assets/user.png" alt="User profile picture">
+      <h2>COVID-19 Tracker</h2>
+      <p>Adminstrator</p>
+      <h2>Date: April 2023</h2>
+    </div>
+    <div id="menu">
+      <ul>
+        <li><a routerLink="/principal"><i class="fas fa-home"></i> Home</a></li>
+        <li><a routerLink="/newdatacovid"><i class="fas fa-virus"></i> New Data Covid19</a></li>
+        <li><a routerLink="/datasearch"><i class="fas fa-pencil-alt"></i> Data Search</a></li>
+        <li><a routerLink="/alldata"><i class="fas fa-chart-pie"></i> Reports</a></li>
+        <li><a><i class="fas fa-cog"></i> Settings</a></li>
+        <li><a routerLink="/home"><i class="fas fa-sign-out-alt" (click)="logout()"></i> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="content">
+    <div id="map">
+
+      <app-worldmap></app-worldmap>
+    </div>
+    <div id="charts">
+      <div id="chart-1">
+        <h2>Continet Last Cases</h2>
+        <app-barchart></app-barchart>
+      </div>
+      <div id="chart-2">
+        <h2>Continet Last Cases</h2>
+         <app-piechart></app-piechart>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  <p>&copy; 2023 COVID-19 Tracker. All rights reserved.</p>
+</footer>

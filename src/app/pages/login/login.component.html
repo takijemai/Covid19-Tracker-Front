@@ -1,0 +1,50 @@
+
+
+<div class="login-container">
+
+  <div class="form-container">
+    <form action="" class="form" [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
+      <h2 class="form-heading">COVID SIGN IN</h2>
+      <p class="form-subheading">Please sign in to continue</p>
+
+      <div class="form-field-wrapper">
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label class="form-label" >Email address</mat-label>
+          <input matInput type="email" name="email" formControlName="email" required class="form-input" >
+          <mat-error *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].invalid">
+            <mat-error *ngIf="loginForm.controls['email'].errors && !loginForm.controls['email'].errors">
+              Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="loginForm.controls['email'].errors">
+              Email is <strong>required</strong>
+            </mat-error>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-field-wrapper">
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label class="form-label" >Password</mat-label>
+          <input matInput type="password" name="password" formControlName="password" required class="form-input" >
+          <mat-error *ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].invalid">
+            <mat-error *ngIf="loginForm.controls['password'].errors && !loginForm.controls['password'].errors">
+              Password must be at least 6 characters long
+            </mat-error>
+            <mat-error *ngIf="loginForm.controls['password'].errors">
+              Password is <strong>required</strong>
+            </mat-error>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <button type="submit" id="submit" [disabled]="loginForm.invalid" class="form-button">Sign In</button>
+      <p class="form-bottom-text">Don't have an account? <a routerLink="/signup" class="form-link">Sign Up</a></p>
+    </form>
+
+  </div>
+
+  <nav>
+    <a routerLink="/">Home</a>
+  </nav>
+</div>
+<ngx-spinner></ngx-spinner>

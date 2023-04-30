@@ -1,0 +1,86 @@
+<nav class="navbar">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="principal">
+      COVID-19 Dashboard
+    </a>
+    <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div id="navbarExampleTransparentExample" class="navbar-menu">
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-light"  (click)="logout()">
+            Logout
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<section class="section">
+  <div class="container">
+    <div class="columns is-multiline">
+      <div class="column is-3">
+        <div class="card cases-card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="../../../assets/cases.png" alt="Cases Icon">
+            </figure>
+          </div>
+          <div class="card-content">
+            <p class="title is-4">Total Cases</p>
+            <p class="subtitle is-6">{{ totalCases}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="column is-3">
+        <div class="card deaths-card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="../../../assets/deaths.jpg" alt="Deaths Icon">
+            </figure>
+          </div>
+          <div class="card-content">
+            <p class="title is-4">Total Deaths</p>
+            <p class="subtitle is-6">{{totalDeaths}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div class="column is-6">
+        <div class="card">
+          <div class="card-content">
+            <h2 class="title is-4" >COVID-19  Country List</h2>
+            <table class="table is-striped is-fullwidth" class="table"  >
+              <thead>
+                <tr >
+                  <th>Country</th>
+                  <th>Population</th>
+                  <th>Total Deaths</th>
+                  <th>Total Cases</th>
+
+                </tr>
+              </thead>
+              <tbody *ngFor="let item of countrydata">
+                <tr>
+                  <td>{{item.country}}</td>
+                  <td> {{item.population}} </td>
+                  <td>{{item.deaths}}</td>
+                  <td>{{item.cases}}</td>
+
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</section>
+
